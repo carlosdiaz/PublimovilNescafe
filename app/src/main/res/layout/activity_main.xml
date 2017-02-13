@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!--
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+    -->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="134dp"
+                    android:ems="10"
+                    android:text="¿Cual es tu sexo?"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignLeft="@+id/radioGroup1"
+                    android:layout_alignStart="@+id/radioGroup1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <Button
+                        android:layout_width="76dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button3"
+                        android:visibility="invisible" />
+
+                    <ScrollView
+                        android:id="@+id/scrollView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="17dp"
+                            android:layout_below="@+id/editText1"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true">
+
+                            <RadioButton
+                                android:id="@+id/radioOption1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="Femenino" />
+
+                            <RadioButton
+                                android:id="@+id/radioOption2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Masculino" />
+
+                            <RadioButton
+                                android:id="@+id/radioOption3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Otro" />
+
+
+                            <RadioButton
+                                android:id="@+id/radioOption4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+
+                            <RadioButton
+                                android:id="@+id/radioOption5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+
+                            <RadioButton
+                                android:id="@+id/radioOption6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <RadioButton
+                                android:id="@+id/radioOption7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <RadioButton
+                                android:id="@+id/radioOption8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+
+                            <RadioButton
+                                android:id="@+id/radioOption9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <RadioButton
+                                android:id="@+id/radioOption10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <RadioButton
+                                android:id="@+id/radioOption11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+
+                            <RadioButton
+                                android:id="@+id/radioOption12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <RadioButton
+                                android:id="@+id/radioOption13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <RadioButton
+                                android:id="@+id/radioOption14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <RadioButton
+                                android:id="@+id/radioOption15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/button4"
+                                android:layout_weight="1"
+                                android:visibility="invisible" />
+
+                        </RadioGroup>
+
+                    </ScrollView>
+
+
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+    <!--
+        </ScrollView>
+    -->
+</RelativeLayout>

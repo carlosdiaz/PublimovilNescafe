@@ -4,14 +4,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/resultsText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Resultados "
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="143dp" />
 
     <include
         layout="@layout/app_bar_principal1"
@@ -25,11 +17,22 @@
         android:id="@+id/buttonFinish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="197dp"
         android:onClick="startPrincipal"
         android:text="Gracias"
-        android:layout_below="@+id/resultsText1"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+    <TextView
+        android:text="Resultados "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewResults"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_alignBottom="@+id/buttonFinish"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="82dp" />
 
 
 </RelativeLayout>

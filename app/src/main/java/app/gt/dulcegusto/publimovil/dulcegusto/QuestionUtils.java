@@ -24,12 +24,12 @@ public class QuestionUtils {
     * Following method will initialize all the questions required
     */
     private void initializeQuestions() {
-        System.out.println("initializeQuestions");
+        //System.out.println("initializeQuestions");
         questions.add("¿Cual es tu sexo?");
         questions.add("¿Que edad tienes?");
         questions.add("¿Cual es tu color favorito?");
         questions.add("¿A que hora te gusta tomar el cafe?");
-        System.out.println(questions.get(1));
+        //System.out.println(questions.get(1));
     }
 
     /*

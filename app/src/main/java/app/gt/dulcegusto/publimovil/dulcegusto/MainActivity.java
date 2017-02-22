@@ -66,13 +66,6 @@ public class MainActivity extends AppCompatActivity {
         rb14 = (RadioButton) findViewById(R.id.radioOption14);
         rb15 = (RadioButton) findViewById(R.id.radioOption15);
 
-
-
-
-
-        question = (TextView) findViewById(R.id.editText1);
-        //We disable the option to edit the edit text field
-        question.setKeyListener(null);
         this.hourSelected = "";
         this.colorSelected = "";
 
@@ -82,13 +75,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadNewQuestionLayout(View view) {
         //System.out.println("Inside clic");
-        System.out.println("loadNewQuestion");
+        //System.out.println("loadNewQuestion");
         saveAnwsers();
         loadNewQuestion();
 
         // All of the questions have been answered, we need to store it in a file
         if (this.counterQuestion == this.totalQuestions+1) {
-            System.out.println("Saving the answers");
+            //System.out.println("Saving the answers");
             saveQuestions(this.getApplicationContext(), "Answers.txt", getAnswersConcatenated());
 
             getResults();
@@ -111,9 +104,6 @@ public class MainActivity extends AppCompatActivity {
         this.counterQuestion ++;
         rd1.check(R.id.radioOption1);
 
-        question.setFocusableInTouchMode(true);
-        question.setFocusable(true);
-        question.requestFocus();
 
         //rb1.setFocusableInTouchMode(true);
         //rb1.setFocusable(true);
@@ -247,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
             answers.add(rb15.getText().toString());
         }
 
-        System.out.println(answers.get(2));
+        //System.out.println(answers.get(2));
         // We save the color choice
         this.colorSelected = answers.get(2);
 
@@ -275,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
             answers.add(rb6.getText().toString());
         }
 
-        System.out.println(answers.get(3));
+        //System.out.println(answers.get(3));
         //We save the hour selected choice
         this.hourSelected = answers.get(3);
 
@@ -293,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
         Date now = new Date();
         String strDate = sdfDate.format(now);
 
-        System.out.println("getAnswersConcatenated");
+        //System.out.println("getAnswersConcatenated");
 
         for (i=0; i<answers.size()-1; i++)
         {
@@ -302,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
         if (i == answers.size()-1) {
             outputAnswers = strDate + "," + outputAnswers  + answers.get(i) + "\n";
         }
-        System.out.println(outputAnswers);
+        //System.out.println(outputAnswers);
 
         return outputAnswers;
     }
@@ -342,7 +332,7 @@ public class MainActivity extends AppCompatActivity {
                 writer.close();
                 Toast.makeText(context, "Respuestas guardadas", Toast.LENGTH_SHORT).show();
             } catch (IOException ex) {
-                System.out.println(ex.toString());
+                //System.out.println(ex.toString());
                 ex.printStackTrace();
             }
         }
@@ -356,7 +346,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(context, "Respuestas guardadas", Toast.LENGTH_SHORT).show();
             }
             catch (IOException ex) {
-                System.out.println(ex.toString());
+                //System.out.println(ex.toString());
                 ex.printStackTrace();
             }
 
@@ -366,7 +356,7 @@ public class MainActivity extends AppCompatActivity {
     //Age
     public void loadQuestion2() {
         // The ideal scenario would be to have only one funtion that retrieves the information
-        question.setText(questions.questions.get(1));
+        //question.setText(questions.questions.get(1));
         rb3.setVisibility(View.VISIBLE);
         rb4.setVisibility(View.VISIBLE);
         rb5.setVisibility(View.VISIBLE);
@@ -385,7 +375,7 @@ public class MainActivity extends AppCompatActivity {
     //Colors
     public void loadQuestion3() {
         // The ideal scenario would be to have only one funtion that retrieves the information
-        question.setText(questions.questions.get(2));
+        //question.setText(questions.questions.get(2));
 
         rb8.setVisibility(View.VISIBLE);
         rb9.setVisibility(View.VISIBLE);
@@ -425,7 +415,7 @@ public class MainActivity extends AppCompatActivity {
     //Time
     public void loadQuestion4() {
         // The ideal scenario would be to have only one funtion that retrieves the information
-        question.setText(questions.questions.get(3));
+        //question.setText(questions.questions.get(3));
         rb7.setVisibility(View.GONE);
         rb8.setVisibility(View.GONE);
         rb9.setVisibility(View.GONE);

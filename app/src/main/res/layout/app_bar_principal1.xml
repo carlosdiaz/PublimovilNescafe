@@ -24,15 +24,6 @@
 
 -->
 
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#90633e"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-
     <include layout="@layout/content_principal1" />
 
     <android.support.design.widget.FloatingActionButton

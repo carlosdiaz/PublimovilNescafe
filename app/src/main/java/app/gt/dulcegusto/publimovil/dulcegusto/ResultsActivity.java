@@ -9,6 +9,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.RelativeLayout;
+import java.util.Timer;
+import java.util.Random;
+import java.util.TimerTask;
+import android.os.Handler;
 
 /**
  * Created by carlos on 9/02/17.
@@ -18,12 +23,25 @@ public class ResultsActivity extends Activity {
 
     private EditText coffeeEdit;
     private TextView coffeeResults;
+    private String results = "";
+    int images[] = {R.drawable.dg6, R.drawable.dg1};
+    //RelativeLayout relativeLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.results_layout);
-        String cofee = getIntent().getStringExtra("COFFEE_CHOICE");
+        //String cofee = getIntent().getStringExtra("COFFEE_CHOICE");
+        String cofee = getIntent().getStringExtra("results");
+        //System.out.println(cofee);
+
+
+        results = getIntent().getStringExtra("foq");
+        //System.out.println(results);
+
+        //relativeLayout = (RelativeLayout) findViewById(R.id.results1);
+
 
         coffeeResults = (TextView) findViewById(R.id.textViewResults);
         coffeeResults.setText("Te recomendamos: " + cofee);
@@ -38,8 +56,42 @@ public class ResultsActivity extends Activity {
             }
         });
 
-
+        /*
+        relativeLayout.setBackgroundResource(images[getRandomNumber()]);
+        Timer myTimer;
+        myTimer = new Timer();
+        myTimer.schedule(new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                TimerMethod();
+            }
+        }, 0, 9000);
+        */
     }
+    /*
+
+    private int getRandomNumber() {
+        return new Random().nextInt(2);
+    }
+
+    private void TimerMethod()
+    {
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+
+                //TODO after 9 sec
+                relativeLayout.setBackgroundResource(images[getRandomNumber()]);
+            }
+        }, 9000);
+    }
+    */
+
+
+
 
 
     public void startPrincipal(View view) {

@@ -10,8 +10,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.DialogInterface;
+import 	android.graphics.drawable.AnimationDrawable;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.app.Activity;
+import android.widget.ImageSwitcher;
+import android.widget.ViewSwitcher.ViewFactory;
+import android.app.ActionBar.LayoutParams;
+import android.view.animation.AnimationUtils;
 
-public class PrincipalActivity2 extends AppCompatActivity {
+
+
+public class PrincipalActivity2 extends Activity {
+
+    AnimationDrawable startingAnimation;
+    RelativeLayout rl;
+    private ImageSwitcher imageSwitcher;
 
 
     @Override
@@ -26,15 +40,26 @@ public class PrincipalActivity2 extends AppCompatActivity {
         //setSupportActionBar(toolbar);
 
 
+        imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher1);
+
+
+        //startingImage.setBackground(R.drawable.animationmain);
+        //rl = (RelativeLayout)findViewById(R.id.mainrelative);
+        //startingAnimation = (AnimationDrawable) rl.getBackground();
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(PrincipalActivity2.this, MainActivity.class);
+
+                Intent myIntent = new Intent(PrincipalActivity2.this, FirstQuestion.class);
                 PrincipalActivity2.this.startActivity(myIntent);
+
 
             }
         });
+        enableLoadingImage();
 
 
     }
@@ -97,12 +122,54 @@ public class PrincipalActivity2 extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-/*
-    public void startSurvey(View view) {
-        Intent myIntent = new Intent(PrincipalActivity1.this, MainActivity.class);
-        PrincipalActivity1.this.startActivity(myIntent);
+
+    public void enableLoadingImage() {
+
+        imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher1);
+
+        ImageView image = (ImageView) findViewById(R.id.imageView1);
+        //image.setVisibility(View.GONE);
+
+        imageSwitcher.setFactory(new ViewFactory() {
+
+            @Override
+            public View makeView() {
+                ImageView myView = new ImageView(getApplicationContext());
+                myView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                myView.setLayoutParams(new ImageSwitcher.LayoutParams(
+                        LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+                return myView;
+            }
+
+        });
+
+        imageSwitcher.setInAnimation(AnimationUtils.loadAnimation(this,
+                android.R.anim.fade_in));
+        imageSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this,
+                android.R.anim.fade_out));
+
+        imageSwitcher.postDelayed(new Runnable() {
+            int i = -1;
+
+            public void run() {
+
+                i++;
+
+                switch (i) {
+                    case 0:
+                        imageSwitcher.setImageResource(R.drawable.dg1);
+                        break;
+                    case 1:
+                        imageSwitcher.setImageResource(R.drawable.dg11);
+                        i = -1;
+                        break;
+                }
+
+                imageSwitcher.postDelayed(this, 1000);
+            }
+        }, 1000);
+
     }
-    */
 
 
-    }
+}
